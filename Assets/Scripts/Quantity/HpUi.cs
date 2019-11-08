@@ -37,7 +37,7 @@ public class HpUi : MonoBehaviour
 
             newScaleX = (StartScale.x) - (StartScale.x) * hpDe;
 
-            newPosX = StartPosition.x - (StartScale.x - newScaleX) / 2;
+            newPosX = StartPosition.x - (StartScale.x - newScaleX) / 3.22f;
 
             localScale = StartScale;
             localScale.x = newScaleX; /*Scale hien tai*/
@@ -55,3 +55,4 @@ public class HpUi : MonoBehaviour
         Destroy(this.gameObject);
     }
 }
+
