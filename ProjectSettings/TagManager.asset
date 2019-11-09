@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Estimate
   - HpUI
+  - NumberFish
+  - huuco
+  - voco
+  - taisudung
   layers:
   - Default
   - TransparentFX
