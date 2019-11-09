@@ -7,8 +7,10 @@ public class ButtonSell : MonoBehaviour
 {
     Text textEstimate;
     Text textFish;
+    Text textFish2;
     public GameObject textEstimateComponent;
     public GameObject textFishComponent;
+    public GameObject textFishComponent2;
     GameController controller;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,7 @@ public class ButtonSell : MonoBehaviour
         // rubbish = GameObject.FindGameObjectWithTag("Rubbish");
         textEstimate = textEstimateComponent.GetComponent<Text>();
         textFish = textFishComponent.GetComponent<Text>();
+        textFish2 = textFishComponent2.GetComponent<Text>();
         controller = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 
     }
@@ -25,7 +28,7 @@ public class ButtonSell : MonoBehaviour
     {
 
     }
-    public void ButtonSellAll()
+    public void ButtonSell1()
     {
         float money = float.Parse(textFish.text) + float.Parse(textEstimate.text);
         textEstimate.text = "" + money;
@@ -33,12 +36,12 @@ public class ButtonSell : MonoBehaviour
         controller.numberfish = 0;
         controller.curEstimate = money;
     }
-    public void ButtonSellHalf()
+    public void ButtonSell2()
     {
-        float money = float.Parse(textFish.text) / 2 + float.Parse(textEstimate.text);
-        textEstimate.text = "" + (int)money;
-        textFish.text = "" + (int)float.Parse(textFish.text) / 2;
-        controller.numberfish = (int)float.Parse(textFish.text) / 2;
-        controller.curEstimate = (int)money + 1;
+        float money = float.Parse(textFish2.text) + float.Parse(textEstimate.text);
+        textEstimate.text = "" + money;
+        textFish2.text = "" + 0;
+        controller.numberfish2 = 0;
+        controller.curEstimate = money;
     }
 }
