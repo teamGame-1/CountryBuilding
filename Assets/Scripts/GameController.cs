@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -13,14 +14,26 @@ public class GameController : MonoBehaviour
     int estimates;
     public GameObject textEstimateComponent;
 
+
+    public GameObject restartButton;
+    Button restartBtn;
+
+    public GameObject gameOverUI;
     // Start is called before the first frame update
     void Start()
     {
         textEstimate = textEstimateComponent.GetComponent<Text>();
         textEstimate.text = ""+maxEstimate;
         curEstimate = maxEstimate;
+        
         timeDelay = 1f;
         nextTime = Time.time;
+
+        restartBtn = restartButton.GetComponent<Button>();
+        restartBtn.onClick.AddListener(() => restart());
+
+        gameOverUI.SetActive(false);
+
     }
 
     
@@ -28,6 +41,7 @@ public class GameController : MonoBehaviour
     void FixedUpdate()
     {
         checkTime();
+        checkGameOver();
     }
 
     void checkTime()
@@ -38,5 +52,21 @@ public class GameController : MonoBehaviour
             nextTime = Time.time + timeDelay;
             textEstimate.text = "" + curEstimate;
         }
+    }
+
+    void checkGameOver()
+    {
+        if (curEstimate <= 0)
+        {
+            textEstimate.text = "0";
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 }
