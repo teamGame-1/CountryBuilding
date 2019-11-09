@@ -11,13 +11,16 @@ public class GameController : MonoBehaviour
 
     Text textEstimate;
     Text textFish;
+    Text textFish2;
     float timeDelay;
     float nextTime;
     Estimate estimate;
-
+    public float fishUp = 0.05f;
     public float numberfish = 0f;
+    public float numberfish2 = 0f;
     int estimates;
     public GameObject textEstimateComponent;
+
 
     Text moneyText;
     public GameObject textMoneyComponent;
@@ -29,17 +32,18 @@ public class GameController : MonoBehaviour
     Button useMoneyBtn;
 
     public GameObject gameOverUI;
-    public GameObject panel;
+   
 
     public GameObject textFishComponent; 
+    public GameObject textFishComponent2;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
         textEstimate = textEstimateComponent.GetComponent<Text>();
         textFish = textFishComponent.GetComponent<Text>();
+        textFish2 = textFishComponent2.GetComponent<Text>();
         textEstimate.text = "" + maxEstimate;
         curEstimate = maxEstimate;
 
@@ -57,7 +61,7 @@ public class GameController : MonoBehaviour
         useMoneyBtn.onClick.AddListener(() => useMoney());
 
         gameOverUI.SetActive(false);
-        panel.SetActive(true);
+
 
         money = 0f;
 
@@ -84,8 +88,10 @@ public class GameController : MonoBehaviour
         if (Time.time > nextTime)
         {
             curEstimate--;
-            numberfish = numberfish + numberfish * 0.05f + 1;
+            numberfish = numberfish + numberfish * fishUp+ 1;
+            numberfish2 = numberfish2 + numberfish2 * fishUp+ 1;
             textFish.text = "" + (int)numberfish;
+            textFish2.text = "" + (int)numberfish2;
             nextTime = Time.time + timeDelay;
             textEstimate.text = "" + (int)curEstimate;
         }
@@ -98,7 +104,7 @@ public class GameController : MonoBehaviour
             textEstimate.text = "0";
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
-            panel.SetActive(false);
+            
         }
     }
 
