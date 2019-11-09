@@ -12,10 +12,10 @@ public class ButtonSell : MonoBehaviour
     public GameObject textFishComponent;
     public GameObject textFishComponent2;
     GameController controller;
-    // Start is called before the first frame update
+
     void Start()
     {
-        // rubbish = GameObject.FindGameObjectWithTag("Rubbish");
+
         textEstimate = textEstimateComponent.GetComponent<Text>();
         textFish = textFishComponent.GetComponent<Text>();
         textFish2 = textFishComponent2.GetComponent<Text>();
@@ -23,26 +23,23 @@ public class ButtonSell : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     public void ButtonSell1()
     {
-        float money = float.Parse(textFish.text) + float.Parse(textEstimate.text);
+        /*float money = float.Parse(textFish.text) + float.Parse(textEstimate.text);
         textEstimate.text = "" + money;
         
         textFish.text = "" + 0;
         controller.numberfish = 0;
-        controller.curEstimate = money;
+        controller.curEstimate = money;*/
+        controller.money += float.Parse(textFish.text);
+        textFish.text = "" + 0;
+        controller.numberfish = 0;
     }
     public void ButtonSell2()
     {
-        float money = float.Parse(textFish2.text) + float.Parse(textEstimate.text);
-        textEstimate.text = "" + money;
+        controller.money += float.Parse(textFish2.text);
         textFish2.text = "" + 0;
         controller.numberfish2 = 0;
-        controller.curEstimate = money;
     }
 }
