@@ -21,18 +21,20 @@ public class Rubbish : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        time += Time.deltaTime;
-        if (time > 5)
+         time += Time.deltaTime;
+        if (time > 2)
         {
             time = 0;
             Configure();
         }
     }
+
     void setImage()
     {
-        posititon = UnityEngine.Random.Range(0, imageResources.Length);
+        posititon = UnityEngine.Random.Range(0, 5);
         Debug.Log(posititon);
         trash = Resources.Load(imageResources[posititon]);
+
     }
     void setPosition()
     {
@@ -50,10 +52,17 @@ public class Rubbish : MonoBehaviour
         pos.x = Random.Range(-0.5f, 0.3f);
         pos.y = Random.Range(-2f, 4f);
         bulletRB[i].transform.position = pos;
-        i++;
+        for(int i = 0; i < 15; i++)
+        {
+            if (bulletRB[i] == null) break;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       // if(CompareTag("Voco") &&)
     }
     private void OnMouseDown()
     {
-        Destroy(this);
+        Debug.Log(i);
     }
 }
