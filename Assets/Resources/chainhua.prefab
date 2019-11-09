@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4008197483777667912}
   - component: {fileID: -7132052167497452105}
   - component: {fileID: 2206229264020572538}
+  - component: {fileID: -5435604376751969541}
   m_Layer: 0
   m_Name: chainhua
   m_TagString: taisudung
@@ -140,4 +141,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85935ab1096cb9446816585eb38334a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  mOffset: {x: 0, y: 0, z: 0}
+  mZCoord: 0
+--- !u!50 &-5435604376751969541
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159352691241950834}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

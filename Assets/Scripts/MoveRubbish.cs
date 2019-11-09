@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class MoveRubbish : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    Vector3 mousePos;
-    bool choose = false;
-    // Start is called before the first frame update
-    void Start()
+    public Vector3 mOffset;
+
+    public float mZCoord;
+
+    void OnMouseDown()
     {
-        mousePos = transform.position;
+        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+
+        mOffset = gameObject.transform.position - GetMouseWorldPos();
     }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 GetMouseWorldPos()
     {
-        if (Input.GetMouseButtonDown(0) && choose)
-        {
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            transform.position = Vector3.Lerp(transform.position, mousePos, moveSpeed);
-        }
-        
+        Vector3 mousePoint = Input.mousePosition;
+
+        mousePoint.z = mZCoord;
+
+        return Camera.main.ScreenToWorldPoint(mousePoint);
     }
-    private void OnMouseDown()
+
+    void OnMouseDrag()
     {
-        choose = !choose;
+        transform.position = GetMouseWorldPos() + mOffset;
     }
+    
 }
