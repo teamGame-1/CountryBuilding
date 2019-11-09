@@ -6,25 +6,31 @@ public class GameController : MonoBehaviour
     public float maxEstimate = 100f;
     public float curEstimate;
 
+
+
     Text textEstimate;
+    Text textFish;
     float timeDelay;
     float nextTime;
     Estimate estimate;
+
+    public float numberfish = 0f;
     int estimates;
     public GameObject textEstimateComponent;
-
+    public GameObject textFishComponent;
+    float FishUp = 0;
     // Start is called before the first frame update
     void Start()
     {
+
         textEstimate = textEstimateComponent.GetComponent<Text>();
-        textEstimate.text = ""+maxEstimate;
+        textFish = textFishComponent.GetComponent<Text>();
+        textEstimate.text = "" + maxEstimate;
         curEstimate = maxEstimate;
-        timeDelay = 1f;
+        timeDelay = 0.75f;
         nextTime = Time.time;
     }
 
-    
-    
     void FixedUpdate()
     {
         checkTime();
@@ -32,11 +38,14 @@ public class GameController : MonoBehaviour
 
     void checkTime()
     {
-        if(Time.time > nextTime)
+        if (Time.time > nextTime)
         {
+            FishUp += 0.005f;
             curEstimate--;
+            numberfish = numberfish + numberfish * FishUp + 1;
+            textFish.text = "" + (int)numberfish;
             nextTime = Time.time + timeDelay;
-            textEstimate.text = "" + curEstimate;
+            textEstimate.text = "" + (int)curEstimate;
         }
     }
 }
