@@ -27,12 +27,7 @@ public class HpUi : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (player.curEstimate <= 0)
-        {
-            KillSelf();
-        }
-        else
-        {
+
             hpDe = (player.maxEstimate - player.curEstimate) / player.maxEstimate;
 
             newScaleX = (StartScale.x) - (StartScale.x) * hpDe;
@@ -46,13 +41,10 @@ public class HpUi : MonoBehaviour
             transform.localScale = localScale;
             transform.localPosition = localPosition;
 
-        }
+
 
 
     }
-    private void KillSelf()
-    {
-        Destroy(this.gameObject);
-    }
+
 }
 
