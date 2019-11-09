@@ -27,8 +27,14 @@ public class HpUi : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if (player.curEstimate >= 100)
+        {
+            localPosition.x = StartPosition.x;
+            localScale.x = StartScale.x;
+        }
+        else { 
 
-            hpDe = (player.maxEstimate - player.curEstimate) / player.maxEstimate;
+        hpDe = (player.maxEstimate - player.curEstimate) / player.maxEstimate;
 
             newScaleX = (StartScale.x) - (StartScale.x) * hpDe;
 
@@ -40,6 +46,8 @@ public class HpUi : MonoBehaviour
             localPosition.x = newPosX;
             transform.localScale = localScale;
             transform.localPosition = localPosition;
+
+        }
 
 
 

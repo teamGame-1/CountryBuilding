@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Estimate
   - HpUI
+  - NumberFish
   layers:
   - Default
   - TransparentFX

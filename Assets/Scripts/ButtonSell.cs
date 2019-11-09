@@ -31,6 +31,7 @@ public class ButtonSell : MonoBehaviour
     {
         float money = float.Parse(textFish.text) + float.Parse(textEstimate.text);
         textEstimate.text = "" + money;
+        
         textFish.text = "" + 0;
         controller.numberfish = 0;
         controller.curEstimate = money;

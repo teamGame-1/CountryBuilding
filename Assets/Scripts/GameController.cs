@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
     public float maxEstimate = 100f;
     public float curEstimate;
 
-
+    public float money;
 
     Text textEstimate;
     Text textFish;
@@ -19,10 +19,14 @@ public class GameController : MonoBehaviour
     int estimates;
     public GameObject textEstimateComponent;
 
-
+    Text moneyText;
+    public GameObject textMoneyComponent;
 
     public GameObject restartButton;
     Button restartBtn;
+
+    public GameObject useMoneyButton;
+    Button useMoneyBtn;
 
     public GameObject gameOverUI;
     public GameObject panel;
@@ -39,6 +43,9 @@ public class GameController : MonoBehaviour
         textEstimate.text = "" + maxEstimate;
         curEstimate = maxEstimate;
 
+        moneyText = textMoneyComponent.GetComponent<Text>();
+        
+
         timeDelay = 0.75f;
 
         nextTime = Time.time;
@@ -46,8 +53,13 @@ public class GameController : MonoBehaviour
         restartBtn = restartButton.GetComponent<Button>();
         restartBtn.onClick.AddListener(() => restart());
 
+        useMoneyBtn = useMoneyButton.GetComponent<Button>();
+        useMoneyBtn.onClick.AddListener(() => useMoney());
+
         gameOverUI.SetActive(false);
         panel.SetActive(true);
+
+        money = 0f;
 
     }
 
@@ -55,6 +67,15 @@ public class GameController : MonoBehaviour
     {
         checkTime();
         checkGameOver();
+        if(curEstimate >= 100)
+        {
+
+            money += curEstimate - 100;
+            curEstimate = 100;
+            
+            
+        }
+        moneyText.text = "money: " + money + " $";
     }
 
     void checkTime()
@@ -85,5 +106,25 @@ public class GameController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
+    }
+
+    void useMoney()
+    {
+        if(money > 0)
+        {
+            float heal = maxEstimate - curEstimate;
+            if(money >= heal)
+            {
+                money -= heal;
+                curEstimate += heal;
+            }
+            else
+            {
+                curEstimate += money;
+                money = 0;
+
+            }
+        }
+        
     }
 }
