@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
 
         money = 0f;
 
+        
     }
 
     void FixedUpdate()
@@ -79,7 +80,7 @@ public class GameController : MonoBehaviour
             
             
         }
-        moneyText.text = "money: " + money + " $";
+        moneyText.text = "money: " + (int)money + " $";
 
     }
 
@@ -103,8 +104,8 @@ public class GameController : MonoBehaviour
         if (curEstimate <= 0)
         {
             textEstimate.text = "0";
-            gameOverUI.SetActive(true);
             Time.timeScale = 0;
+            gameOverUI.SetActive(true);
             useMoneyButton.SetActive(false);
         }
     }
@@ -135,4 +136,5 @@ public class GameController : MonoBehaviour
         }
         
     }
+
 }
