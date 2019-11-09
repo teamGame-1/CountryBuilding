@@ -31,8 +31,8 @@ public class GameController : MonoBehaviour
     public GameObject gameOverUI;
     public GameObject panel;
 
-    public GameObject textFishComponent;
-    float FishUp = 0;
+    public GameObject textFishComponent; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour
         curEstimate = maxEstimate;
 
         moneyText = textMoneyComponent.GetComponent<Text>();
-        
+                  
 
         timeDelay = 0.75f;
 
@@ -83,9 +83,8 @@ public class GameController : MonoBehaviour
     {
         if (Time.time > nextTime)
         {
-            FishUp += 0.005f;
             curEstimate--;
-            numberfish = numberfish + numberfish * FishUp + 1;
+            numberfish = numberfish + numberfish * 0.05f + 1;
             textFish.text = "" + (int)numberfish;
             nextTime = Time.time + timeDelay;
             textEstimate.text = "" + (int)curEstimate;

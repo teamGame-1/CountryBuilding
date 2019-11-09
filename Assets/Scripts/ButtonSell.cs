@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonSell : MonoBehaviour
 {
-    GameObject rubbish;
-    int sumRubbish = 0;
     Text textEstimate;
     Text textFish;
     public GameObject textEstimateComponent;
@@ -43,10 +41,5 @@ public class ButtonSell : MonoBehaviour
         textFish.text = "" + (int)float.Parse(textFish.text) / 2;
         controller.numberfish = (int)float.Parse(textFish.text) / 2;
         controller.curEstimate = (int)money + 1;
-    }
-    private void OnMouseDown()
-    {
-        sumRubbish--;
-        Destroy(this);
     }
 }
