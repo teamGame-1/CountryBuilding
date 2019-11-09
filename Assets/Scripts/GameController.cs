@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     Button restartBtn;
 
     public GameObject gameOverUI;
+    public GameObject panel;
 
     public GameObject textFishComponent;
     float FishUp = 0;
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
         restartBtn.onClick.AddListener(() => restart());
 
         gameOverUI.SetActive(false);
+        panel.SetActive(true);
 
     }
 
@@ -75,6 +77,7 @@ public class GameController : MonoBehaviour
             textEstimate.text = "0";
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
+            panel.SetActive(false);
         }
     }
 
