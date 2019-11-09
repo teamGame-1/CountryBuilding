@@ -32,7 +32,7 @@ public class HpUi : MonoBehaviour
 
             newScaleX = (StartScale.x) - (StartScale.x) * hpDe;
 
-            newPosX = StartPosition.x - (StartScale.x - newScaleX) / 3.22f;
+            newPosX = StartPosition.x - (StartScale.x - newScaleX) / 3.33f;
 
             localScale = StartScale;
             localScale.x = newScaleX; /*Scale hien tai*/
