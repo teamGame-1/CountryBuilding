@@ -2228,36 +2228,6 @@ Transform:
   m_Father: {fileID: 413978514}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1538333507
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1538333508}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1538333508
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538333507}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.24494621, y: -0.13829936, z: -9.63978}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543993331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2998,22 +2968,22 @@ PrefabInstance:
     - target: {fileID: 6468329157535996571, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 41
+      value: 56.425003
       objectReference: {fileID: 0}
     - target: {fileID: 6468329157535996571, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -70
+      value: -63.45
       objectReference: {fileID: 0}
     - target: {fileID: 6468329157535996571, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 84.08
+      value: 53.15
       objectReference: {fileID: 0}
     - target: {fileID: 6468329157535996571, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 53.9
+      value: 26.9
       objectReference: {fileID: 0}
     - target: {fileID: 6468329157535996571, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
@@ -3048,7 +3018,9 @@ PrefabInstance:
     - target: {fileID: 6468329158458718623, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
       propertyPath: m_Text
-      value: Use Money To Help National
+      value: 'Vendor
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6468329157535996573, guid: d86de621e7eb50749b9eff41d5a40114,
         type: 3}
@@ -3141,5 +3113,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
