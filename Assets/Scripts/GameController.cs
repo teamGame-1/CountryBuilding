@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     public GameObject textFishComponent; 
     public GameObject textFishComponent2;
 
-
+    public float porpular;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,10 +48,10 @@ public class GameController : MonoBehaviour
         curEstimate = maxEstimate;
 
         moneyText = textMoneyComponent.GetComponent<Text>();
-                  
+
+        porpular = 1f;
 
         timeDelay = 0.75f;
-
         nextTime = Time.time;
 
         restartBtn = restartButton.GetComponent<Button>();
@@ -87,7 +87,8 @@ public class GameController : MonoBehaviour
     {
         if (Time.time > nextTime)
         {
-            curEstimate--;
+            curEstimate -= (1 + porpular * 0.1f);
+            porpular++;
             numberfish = numberfish + numberfish * fishUp+ 1;
             numberfish2 = numberfish2 + numberfish2 * fishUp+ 1;
             textFish.text = "" + (int)numberfish;
@@ -104,13 +105,14 @@ public class GameController : MonoBehaviour
             textEstimate.text = "0";
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
-            
+            useMoneyButton.SetActive(false);
         }
     }
 
     void restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        useMoneyButton.SetActive(true);
         Time.timeScale = 1;
     }
 
