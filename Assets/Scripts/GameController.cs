@@ -76,6 +76,7 @@ public class GameController : MonoBehaviour
             
         }
         moneyText.text = "money: " + money + " $";
+
     }
 
     void checkTime()
