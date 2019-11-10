@@ -4,22 +4,41 @@ using UnityEngine;
 
 public class RecycleGreen : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AudioClip trash;
+    public AudioSource ad;
+    GameController gameController;
     void Start()
     {
-        
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        trash = Resources.Load<AudioClip>("trash");
+        ad = this.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("huuco"))
         {
             Destroy(collision.gameObject);
+            gameController.punishmentMoneyText.color = Color.yellow;
+            gameController.punishmentMoneyText.text = "+10$";
+            gameController.money += 10;
+            
+            Invoke("PrintVoidText", 1f);
+            ad.PlayOneShot(trash);
         }
+        if (collision.CompareTag("taisudung") || collision.CompareTag("voco"))
+        {
+            Destroy(collision.gameObject);  
+            gameController.punishmentMoneyText.color = Color.red;
+            gameController.punishmentMoneyText.text = "-2$";
+            gameController.money -= 2;
+            
+            Invoke("PrintVoidText", 1f);
+            ad.PlayOneShot(trash);
+        }
+    }
+    void PrintVoidText()
+    {
+        gameController.punishmentMoneyText.text = "";
     }
 }

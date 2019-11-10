@@ -11,6 +11,7 @@ TagManager:
   - Sound
   - HpUI
   - Estimate
+  - vendor
   layers:
   - Default
   - TransparentFX

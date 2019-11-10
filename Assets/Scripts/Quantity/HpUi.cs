@@ -1,57 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HpUi : MonoBehaviour
 {
     public GameController player;
     // Start is called before the first frame update
-    Vector3 localScale;
-    Vector3 localPosition;
-
-    Vector3 StartScale;
-    Vector3 StartPosition;
-
-    float newScaleX;
-    float newPosX;
-    float hpDe;// mau giam
-
+    Image health;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
-        StartScale = transform.localScale;
-        StartPosition = GameObject.FindWithTag("HpUI").transform.localPosition;
+        health = this.GetComponent<Image>();
     }
 
 
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (player.curEstimate >= 100)
-        {
-            localPosition.x = StartPosition.x;
-            localScale.x = StartScale.x;
-        }
-        else { 
-
-        hpDe = (player.maxEstimate - player.curEstimate) / player.maxEstimate;
-
-            newScaleX = (StartScale.x) - (StartScale.x) * hpDe;
-
-            newPosX = StartPosition.x - (StartScale.x - newScaleX) / 3.33f;
-
-            localScale = StartScale;
-            localScale.x = newScaleX; /*Scale hien tai*/
-            localPosition = StartPosition;
-            localPosition.x = newPosX;
-            transform.localScale = localScale;
-            transform.localPosition = localPosition;
-
-        }
-
-
-
-
+        health.fillAmount = ((float)player.curEstimate / (float)player.maxEstimate);
     }
 
 }

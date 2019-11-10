@@ -7,11 +7,14 @@ public class GameController : MonoBehaviour
     public float maxEstimate = 100f;
     public float curEstimate;
 
+    float timescore=0;
+
     public float money;
 
     Text textEstimate;
     Text textFish;
     Text textFish2;
+    public Text timelife;
     float timeDelay;
     float nextTime;
     Estimate estimate;
@@ -39,6 +42,9 @@ public class GameController : MonoBehaviour
 
     public float porpular;
     // Start is called before the first frame update
+
+    public Text punishmentMoneyText;
+    public GameObject textPunishmentMoneyComponent;
     void Start()
     {
         textEstimate = textEstimateComponent.GetComponent<Text>();
@@ -51,7 +57,7 @@ public class GameController : MonoBehaviour
 
         porpular = 1f;
 
-        timeDelay = 0.75f;
+        timeDelay = 1.5f;
         nextTime = Time.time;
 
         restartBtn = restartButton.GetComponent<Button>();
@@ -65,11 +71,13 @@ public class GameController : MonoBehaviour
 
         money = 0f;
 
-        
+        punishmentMoneyText = textPunishmentMoneyComponent.GetComponent<Text>();
     }
 
     void FixedUpdate()
     {
+        timescore += Time.deltaTime;
+        timelife.text = "Time life: " + (int)timescore+"s";
         checkTime();
         checkGameOver();
         if(curEstimate >= 100)
