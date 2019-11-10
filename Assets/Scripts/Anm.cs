@@ -5,23 +5,13 @@ using UnityEngine.UI;
 
 public class Anm : MonoBehaviour
 {
-    public Image image;
-    public Sprite[] sprites;
-    public float animationSpeed;
-
-    public IEnumerator nukeMethod()
-    {
-        //destroy all game objects
-        for (int i = 0; i < sprites.Length; i++)
-        {
-            image.sprite = sprites[i];
-            yield return new WaitForSeconds(animationSpeed);
-        }
-    }
+  
     // Start is called before the first frame update
     void Start()
     {
-        
+        var worldHeight = Camera.main.orthographicSize * 2f;
+        var worldWight = worldHeight * Screen.width / Screen.height;
+        transform.localScale = new Vector3(worldWight, worldHeight, 0f);
     }
 
     // Update is called once per frame

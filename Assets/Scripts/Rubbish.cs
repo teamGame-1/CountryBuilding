@@ -22,7 +22,7 @@ public class Rubbish : MonoBehaviour
     private void Update()
     {
          time += Time.deltaTime;
-        if (time > 2)
+        if (time > 5)
         {
             time = 0;
             Configure();

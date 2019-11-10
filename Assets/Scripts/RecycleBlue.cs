@@ -22,12 +22,4 @@ public class RecycleBlue : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Debug.Log("ok");
-        if (collision.CompareTag("taisudung"))
-        {
-            Debug.Log("ok");
-        }
-    }
 }
