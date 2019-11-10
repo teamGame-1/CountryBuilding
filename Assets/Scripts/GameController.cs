@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
     public float curEstimate;
 
     float timescore=0;
-
+    Rubbish rubbish;
     public float money;
 
     Text textEstimate;
@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
         money = 0f;
 
         punishmentMoneyText = textPunishmentMoneyComponent.GetComponent<Text>();
+        rubbish = gameObject.GetComponent<Rubbish>();
     }
 
     void FixedUpdate()
@@ -109,7 +110,8 @@ public class GameController : MonoBehaviour
 
     void checkGameOver()
     {
-        if (curEstimate <= 0)
+        
+        if (curEstimate <= 0 || rubbish.i>14)
         {
             textEstimate.text = "0";
             Time.timeScale = 0;

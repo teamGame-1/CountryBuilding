@@ -30,8 +30,8 @@ public class RecycleBlue : MonoBehaviour
         {
             Destroy(collision.gameObject);
             gameController.punishmentMoneyText.color = Color.red;
-            gameController.punishmentMoneyText.text = "-2$";
-            gameController.money -= 2;
+            gameController.punishmentMoneyText.text = "-15$";
+            gameController.money -= 15;
             
             Invoke("PrintVoidText", 1f);
             ad.PlayOneShot(trash);

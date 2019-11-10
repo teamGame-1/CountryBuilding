@@ -11,7 +11,7 @@ public class Rubbish : MonoBehaviour
     Object trash;
     float time = 0;
     public string[] imageResources;
-    int i = 0;
+    public int i = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,15 +52,12 @@ public class Rubbish : MonoBehaviour
         pos.x = Random.Range(-0.5f, 0.3f);
         pos.y = Random.Range(-2f, 4f);
         bulletRB[i].transform.position = pos;
-        for(int i = 0; i < 15; i++)
+        for(i = 0; i < 15; i++)
         {
             if (bulletRB[i] == null) break;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-       // if(CompareTag("Voco") &&)
-    }
+
     private void OnMouseDown()
     {
         Debug.Log(i);
