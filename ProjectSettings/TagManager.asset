@@ -12,6 +12,8 @@ TagManager:
   - HpUI
   - Estimate
   - vendor
+  - BgStart
+  - BgTutorial
   layers:
   - Default
   - TransparentFX
