@@ -28,11 +28,12 @@ public class StartGame : MonoBehaviour
         startButton.onClick.AddListener(() => exitClick());
         tutorialTutorial.SetActive(false);
         startTutorial.SetActive(true);
+        startButtonObject.SetActive(false);
     }
 
     void startClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("SampleScene");
     }
 
     void tutorialClick()
@@ -41,6 +42,7 @@ public class StartGame : MonoBehaviour
         exitButtonObject.SetActive(false);
         tutorialTutorial.SetActive(true);
         startTutorial.SetActive(false);
+        startButtonObject.SetActive(true);
     }
     void exitClick()
     {
