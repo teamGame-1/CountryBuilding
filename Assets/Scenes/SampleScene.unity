@@ -216,7 +216,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -382.0733, y: -0.9534302}
+  m_Offset: {x: -400.15985, y: -50.40734}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -227,7 +227,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 259.9596, y: 474.31842}
+  m_Size: {x: 296.1327, y: 375.41058}
   m_EdgeRadius: 0
 --- !u!82 &235471184
 AudioSource:
@@ -2035,7 +2035,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 8.390572, y: -4.18219}
+  m_Offset: {x: 8.390564, y: -54.63212}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2046,7 +2046,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 260.82275, y: 487.8792}
+  m_Size: {x: 260.82275, y: 386.97937}
   m_EdgeRadius: 0
 --- !u!82 &865854191
 AudioSource:
@@ -2209,7 +2209,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 435.3451, y: -0.9235687}
+  m_Offset: {x: 432.93372, y: -38.636383}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2220,7 +2220,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 312.28537, y: 484.17654}
+  m_Size: {x: 317.10815, y: 408.75092}
   m_EdgeRadius: 0
 --- !u!82 &921726336
 AudioSource:
@@ -3854,12 +3854,12 @@ PrefabInstance:
     - target: {fileID: 7792666939047505800, guid: 6fe9370564b42e04b9b9bf78169d28e0,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 10.2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7792666939047505800, guid: 6fe9370564b42e04b9b9bf78169d28e0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 42.4
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7792666939047505800, guid: 6fe9370564b42e04b9b9bf78169d28e0,
         type: 3}

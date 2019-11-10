@@ -22,7 +22,7 @@ public class Rubbish : MonoBehaviour
     private void Update()
     {
          time += Time.deltaTime;
-        if (time > 4)
+        if (time > 3)
         {
             time = 0;
             Configure();
@@ -31,7 +31,7 @@ public class Rubbish : MonoBehaviour
 
     void setImage()
     {
-        posititon = UnityEngine.Random.Range(0, 5);
+        posititon = UnityEngine.Random.Range(0, 8);
         Debug.Log(posititon);
         trash = Resources.Load(imageResources[posititon]);
 

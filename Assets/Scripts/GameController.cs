@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
     void FixedUpdate()
     {
         timescore += Time.deltaTime;
-        timelife.text = "Time life: " + (int)timescore+"s";
+        if(textEstimate.text != "0") timelife.text = "Time life: " + (int)timescore+"s";
         checkTime();
         checkGameOver();
         if(curEstimate >= 100)
@@ -114,9 +114,9 @@ public class GameController : MonoBehaviour
         if (curEstimate <= 0 || rubbish.i>14)
         {
             textEstimate.text = "0";
-            Time.timeScale = 0;
             gameOverUI.SetActive(true);
             useMoneyButton.SetActive(false);
+            Time.timeScale = 0;
         }
     }
 
